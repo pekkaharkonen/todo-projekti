@@ -4,7 +4,7 @@ var express = require('express');
 var router = express.Router();
 var fs = require('fs');//
 var uuid = require('uuid/v4'); //
-tasks = [{ id: 0, task: "koiranulkoilutus" }, { id: 1, task: "kauppareissu" }];
+tasks = [];
 const cors = require ('cors');
 
 // const tasksJSON = require('../tasks.json')
