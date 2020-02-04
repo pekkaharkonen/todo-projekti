@@ -5,8 +5,14 @@
   "scripts": {
     "start": "SET DEBUG=todo-projekti:* & nodemon ./bin/www"
   },
+  "nodemonConfig": {
+    "ignore": [
+      "*.json"
+    ]
+  },
   "dependencies": {
     "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "fs": "0.0.1-security",
