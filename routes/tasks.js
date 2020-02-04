@@ -1,3 +1,5 @@
+// Titta ja Aleksi
+
 var express = require('express');
 var router = express.Router();
 var fs = require('fs');//
@@ -31,8 +33,39 @@ router.route('/')
         return
       }
     }
-    
+    res.status(404)
+    res.json({Viesti: "Taskia ei löydy!"})
   })
+
+  .delete(function(req, res){
+    for(let task of tasks){
+      if(task.id === req.params.id) {
+        tasks.splice(task, 1)
+        res.json({Viesti: "Taski poistettu!"})
+        return
+      }
+    }
+    res.status(404)
+    res.json({Viesti: "Virhe! Taskia ei löytynyt"})
+  })
+
+  .put(function(req, res){
+    for(let t of tasks){
+      if(t.id === req.params.id){
+        const change = req.body;
+        if(change.task){
+          t.task=change.task
+          console.log(t.task);
+        }
+        res.json({Viesti:'Muutettu'});
+        return
+      }
+    }
+    res.status(404)
+    res.json({Viesti: "Virhe! Taskia ei löytynyt"})
+  });
+
+
 
 
 module.exports = router;
