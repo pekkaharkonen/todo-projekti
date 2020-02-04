@@ -23,9 +23,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// fs.readFile("tasks.json", (err, data) => {
-//   tasks = JSON.parse(data); //
-// });
+ fs.readFile("tasks.json", (err, data) => {
+   tasks = JSON.parse(data); //
+ });
 
 //app.use('/', indexRouter);
 app.use('/api/tasks', tasksRouter); //
@@ -35,7 +35,7 @@ app.use(function(req, res, next) {
   next(createError(404));
 });
 
-// error handler
+// error handlergit
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
