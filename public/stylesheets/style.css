@@ -16,6 +16,7 @@ body {
 
 }
 
+
 h2 {
   color: black;
   font-weight: 100;
@@ -52,6 +53,10 @@ h2 {
   border:none;
   border-radius: 5px;
 }
+#button:hover {
+  cursor: pointer;
+  background: #37aeba;
+}
 
 #tasks {
   margin-top: 1rem;
@@ -60,5 +65,33 @@ h2 {
   padding: 1.5rem;
   background: #fff;
   min-height: 300px;
+}
+
+#tasks ul li {
+  display:flex;
+  justify-content: space-between;
+  overflow:hidden;
+}
+
+#tasks button {
+  margin: 0.2rem;
+  padding: 0.2rem;
+  color: #f4f4f4;
+  border:none;
+  border-radius: 5px;
+}
+#delete-task{
+  background: #ff0000;
+}
+#delete-task:hover {
+  background: #e50000;
+  cursor: pointer;
+}
+#update-task {
+  background: #3ec2cf;
+}
+#update-task:hover{
+  background: #37aeba;
+  cursor: pointer;
 }
 
