@@ -1,5 +1,6 @@
 const taskData = document.getElementById("task");
 const button = document.getElementById("button");
+const taskList = document.getElementById('task-list')
 
 button.addEventListener("click", postTask);
 window.addEventListener("DOMContentLoaded", getTasks);
@@ -43,6 +44,12 @@ async function getTasks() {
   }
 }
 
-function addTasksToSite(tasks) {}
+function addTasksToSite(tasks) {
+  for (let t of tasks){
+    let li = document.createElement('li')
+    li.innerHTML = t.task
+    taskList.appendChild(li)
+  }
+}
 
 
