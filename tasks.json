@@ -1,18 +1,2 @@
 [
- {
-  "task": "Go jogging",
-  "id": "6bc3599f-e605-4c61-903a-b37816945b99"
- },
- {
-  "task": "Make some food",
-  "id": "c799ed1a-b3eb-49f0-a846-3b4b1e5b4054"
- },
- {
-  "task": "Learn to code",
-  "id": "29c84371-b7e7-4c20-ac3e-f6638b3ddf12"
- },
- {
-  "task": "Learn Node.js",
-  "id": "bf8f0117-93cd-414f-b33a-dc44a5cf583e"
- }
 ]

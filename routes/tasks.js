@@ -53,7 +53,7 @@ router.route('/:id')
     let id = 0;
     for (let task of tasks) {
       if (task.id === req.params.id) {
-        tasks.splice(task, 1)
+        tasks.splice(tasks.indexOf(task), 1)
         write();
         res.json({ Viesti: "Taski poistettu!" })
         return
@@ -79,8 +79,5 @@ router.route('/:id')
     res.status(404)
     res.json({ Viesti: "Virhe! Taskia ei löytynyt" })
   });
-
-
-
 
 module.exports = router;
