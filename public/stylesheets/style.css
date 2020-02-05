@@ -183,4 +183,8 @@ h2 {
   #tasks {
     max-width: 300px;
   }
+  #weather {
+    display: none;
+  }
+
 }
