@@ -16,7 +16,13 @@ router.route('/:city')
       return res.json()
     }) 
     .then (function(data) {
-      res.json(data);
+      let clouds = data.weather[0].main; //clouds
+      let temperature = data.main.temp;
+      let windspeed = data.wind.speed;
+      let cloudall = data.clouds.all;
+      let weather = {cloud: clouds, cloudsall: cloudall, temp: temperature, wind: windspeed};
+      res.json(weather);
+      //res.json(data)
     })
 }); 
 
