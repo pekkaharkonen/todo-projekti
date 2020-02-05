@@ -17,6 +17,10 @@ function postTask(e) {
     alert("Please add a task");
     return;
   }
+  if (taskData.length>45){
+    alert("Max length for task is 45 characters. Please readjust your task description.")
+    return;
+  }
   //Lähetetään form data Fetch POSTilla:
   fetch("/api/tasks", {
     method: "POST",
@@ -108,6 +112,13 @@ function updateTask(task, id) {
   })
   // Submitilla ktusutaan funktiota, joka lähettää PUT-requestin palvelimelle
   document.getElementById('button-edit').addEventListener("click", (e)=> {
+    if (editInput.value === "") {
+      alert("Please add a task description!");
+      return;
+    }else if (editInput.value.length > 45){
+      alert("Max length for task is 45 characters. Please readjust your task desciption.")
+      return;
+    }
     sendUpdatedTaskToServer(id, editInput.value)
   })
 }

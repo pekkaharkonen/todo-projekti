@@ -149,3 +149,29 @@ h2 {
 #tasks input:focus {
   outline: none;
 }
+
+@media screen and (max-width: 560px) {
+  #add-task,
+  #edit-tasks,
+  #tasks {
+    max-width: 400px;
+  }
+  #tasks ul li {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px dotted #999;
+  }
+  #tasks ul li span {
+    justify-content:center;
+  }
+}
+
+@media screen and (max-width: 399px) {
+  #add-task,
+  #edit-tasks,
+  #tasks {
+    max-width: 300px;
+  }
+}
