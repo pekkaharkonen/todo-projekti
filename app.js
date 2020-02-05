@@ -6,7 +6,7 @@ var logger = require('morgan');
 var fs = require ('fs'); //
 
 
-//var indexRouter = require('./routes/index');
+var weatherRouter = require('./routes/weather');
 var tasksRouter = require('./routes/tasks'); //
 
 var app = express();
@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
    tasks = JSON.parse(data); //
  });
 
-//app.use('/', indexRouter);
+app.use('/api/weather', weatherRouter);
 app.use('/api/tasks', tasksRouter); //
 
 // catch 404 and forward to error handler
