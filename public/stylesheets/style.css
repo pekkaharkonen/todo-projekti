@@ -121,6 +121,7 @@ h2 {
 }
 #delete-task{
   background: #ff0000;
+  width: 3rem;
 }
 #delete-task:hover {
   background: #e50000;
@@ -128,6 +129,7 @@ h2 {
 }
 #update-task {
   background: #3ec2cf;
+  width: 3rem;
 }
 #update-task:hover{
   background: #37aeba;
@@ -141,7 +143,7 @@ h2 {
   padding: 0.3rem;
   border: none;
   border-bottom: 1px solid #999;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 #tasks input:focus {

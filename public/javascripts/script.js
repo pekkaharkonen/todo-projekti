@@ -60,7 +60,7 @@ function updateOrDeleteTask(e) {
 
   // Kutsutaan funktiota updateTask tai deleteTask riippuen siitä, kumpaa nappia ollaan painettu
 
-  if (e.target.innerHTML === "Update") {
+  if (e.target.innerHTML === "Edit") {
     updateTask(taskName, taskId);
   }
   if (e.target.innerHTML === "Delete") {
@@ -71,7 +71,7 @@ function updateOrDeleteTask(e) {
 function addTasksToSite(tasks) {
   for (let t of tasks) {
     let li = document.createElement("li");
-    li.innerHTML = `<p id="${t.id}">${t.task}</p> <span><button id="update-task">Update</button><button id="delete-task">Delete</button></span>`;
+    li.innerHTML = `<p id="${t.id}">${t.task}</p> <span><button id="update-task">Edit</button><button id="delete-task">Delete</button></span>`;
     taskList.appendChild(li);
   }
 }
