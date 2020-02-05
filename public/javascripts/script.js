@@ -99,9 +99,13 @@ function deleteTask(id) {
 
 function updateTask(task, id) {
   const editTask = document.getElementById('edit-task');
-  const addTask = document.getElementById('add-task')
+  const addTask = document.getElementById('add-task');
+  const allTasks = document.getElementById('tasks')
+
+  // Muut sivun osuudet piiloon: 
   editTask.style.display = "block"
   addTask.style.display = "none"
+  allTasks.style.display = "none"
 
   //Asetetaan task valmiiksi input-kenttään:
   editInput.value = task;
