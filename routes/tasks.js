@@ -50,6 +50,7 @@ router.route('/:id')
   })
 
   .delete(function (req, res) {
+    let id = 0;
     for (let task of tasks) {
       if (task.id === req.params.id) {
         tasks.splice(task, 1)
