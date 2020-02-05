@@ -20,7 +20,8 @@ router.route('/:city')
       let temperature = data.main.temp;
       let windspeed = data.wind.speed;
       let cloudall = data.clouds.all;
-      let weather = {cloud: clouds, cloudsall: cloudall, temp: temperature, wind: windspeed};
+      let icon = data.weather[0].icon;
+      let weather = {cloud: clouds, cloudsall: cloudall, temp: temperature, wind: windspeed, icon: icon};
       res.json(weather);
       //res.json(data)
     })
