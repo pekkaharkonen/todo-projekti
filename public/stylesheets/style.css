@@ -16,7 +16,6 @@ body {
 
 }
 
-
 h2 {
   color: black;
   font-weight: 100;
@@ -24,6 +23,7 @@ h2 {
   margin-bottom: 1rem;
 }
 
+/* Add task box-styling */
 #add-task {
   margin-top: 1rem;
   box-shadow: 4px 4px 15px 1.5px rgba(0, 0, 0, 0.1);
@@ -44,7 +44,32 @@ h2 {
   outline: none;
 }
 
-#button {
+/* Edit-task box styling */
+
+#edit-task {
+  margin-top: 1rem;
+  box-shadow: 4px 4px 15px 1.5px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  padding: 1.5rem;
+  background: #fff;
+  margin-bottom: 2rem;
+  /* Oletuksena piilossa: */
+  display: none;
+}
+
+#edit-task input {
+  width: 100%;
+  padding: 0.3rem;
+  border: none;
+  border-bottom: 1px solid #999;
+}
+
+#edit-task input:focus {
+  outline: none;
+}
+
+#button,
+#button-edit {
   margin: 1rem 0;
   padding: 0.5rem;
   width: 80px;
@@ -53,9 +78,23 @@ h2 {
   border:none;
   border-radius: 5px;
 }
-#button:hover {
+#button-cancel {
+  margin: 1rem 0;
+  padding: 0.5rem;
+  width: 80px;
+  background: #ff0000;
+  color: #f4f4f4;
+  border:none;
+  border-radius: 5px;
+}
+#button:hover,
+#button-edit:hover {
   cursor: pointer;
   background: #37aeba;
+}
+#button-cancel:hover {
+  cursor: pointer;
+  background: #e50000;
 }
 
 #tasks {
@@ -82,6 +121,7 @@ h2 {
 }
 #delete-task{
   background: #ff0000;
+  width: 3rem;
 }
 #delete-task:hover {
   background: #e50000;
@@ -89,9 +129,23 @@ h2 {
 }
 #update-task {
   background: #3ec2cf;
+  width: 3rem;
 }
 #update-task:hover{
   background: #37aeba;
   cursor: pointer;
 }
 
+/* Filter-määritykset */
+
+#tasks input {
+  width: 100%;
+  padding: 0.3rem;
+  border: none;
+  border-bottom: 1px solid #999;
+  margin-bottom: 1.5rem;
+}
+
+#tasks input:focus {
+  outline: none;
+}
