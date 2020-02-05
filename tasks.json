@@ -1,46 +1,22 @@
 [
  {
-  "task": "Go swimming",
-  "id": "fac374f7-6284-4268-86a1-98dd4b052198"
- },
- {
-  "task": "Shop groceries",
-  "id": "77203d1a-973c-4d6b-8b02-d9623a037fe8"
- },
- {
-  "task": "Buy ice-cream",
-  "id": "c4b22146-105a-4483-9f38-b98a84c9fc00"
- },
- {
-  "task": "Do laundry",
-  "id": "1a88943c-ee31-426b-9002-f5377832857b"
- },
- {
-  "task": "Wash the dishes",
-  "id": "a3bd6f30-f76b-4193-8191-8a7b88c99026"
- },
- {
-  "task": "Watch football",
-  "id": "5585ac86-fb75-489f-a9a8-c7971645966f"
- },
- {
-  "task": "Take a shower",
-  "id": "1a1c53a3-255b-418e-b998-8e6ba156db7d"
+  "task": "Take a nap",
+  "id": "729e29c8-4481-4b0b-9477-bc6556318719"
  },
  {
   "task": "Go jogging",
-  "id": "428de8e6-845c-4aba-9402-27de851a5f3c"
+  "id": "6bc3599f-e605-4c61-903a-b37816945b99"
  },
  {
-  "task": "Go to the gym",
-  "id": "fee9f7d5-a0e8-4ab8-93cc-2411747b6f92"
+  "task": "Make some food",
+  "id": "c799ed1a-b3eb-49f0-a846-3b4b1e5b4054"
  },
  {
   "task": "Learn to code",
-  "id": "fd3a5e24-bde2-46a5-bb98-9a86a659782f"
+  "id": "29c84371-b7e7-4c20-ac3e-f6638b3ddf12"
  },
  {
-  "task": "Eat a banana",
-  "id": "7dc348ec-fab9-4d9f-92c6-8dfd5d3e606e"
+  "task": "Learn Node.js",
+  "id": "bf8f0117-93cd-414f-b33a-dc44a5cf583e"
  }
 ]

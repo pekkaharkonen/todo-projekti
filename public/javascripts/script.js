@@ -2,6 +2,7 @@ const taskData = document.getElementById("task");
 const button = document.getElementById("button");
 const taskList = document.getElementById("task-list");
 const filter = document.getElementById("filter")
+const editInput = document.getElementById('task-edit')
 
 // Tallennetaan taskit myös tähän arrayhin filtteröinnin helpottamiseksi
 let currentTasks = [];
@@ -98,15 +99,40 @@ function updateTask(task, id) {
   editTask.style.display = "block"
   addTask.style.display = "none"
 
+  //Asetetaan task valmiiksi input-kenttään:
+  editInput.value = task;
+
   // Jos cancelia painettu, muutetaan displayt takaisin alkuperäisiksi
   document.getElementById('button-cancel').addEventListener("click", (e)=> {
-    editTask.style.display = "none";
-    addTask.style.display = "block"
+    location.reload();
   })
-
+  // Submitilla ktusutaan funktiota, joka lähettää PUT-requestin palvelimelle
   document.getElementById('button-edit').addEventListener("click", (e)=> {
-    console.log("kutsutaan")
+    sendUpdatedTaskToServer(id, editInput.value)
   })
+}
+
+function sendUpdatedTaskToServer(id, updatedTask){
+  fetch(`/api/tasks/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      task: updatedTask
+    })
+  })
+    .then(res => {
+      if (res.status === 200 || res.status === 201) {
+        console.log("PUT request successful!");
+        getTasks();
+      }
+      return res.json();
+    })
+    .then(data => console.log(data))
+    .catch(error => console.log(error));
+
+    location.reload();
 }
 
 
