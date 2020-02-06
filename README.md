@@ -13,7 +13,7 @@ To run the program, you have to have Node.js installed on your computer.
 
 ### Installing
 
-Install the required node modules on your computer, open the terminal and type:
+To install the required node modules on your computer, open the terminal and type:
 
 ```
 npm install
@@ -29,7 +29,7 @@ npm start
 ## Running the tests
 
 Tests are mainly focused on testing the functionality of our REST API.
-The tests can be executed with following command:
+The tests can be executed with a following command:
 
 ```
 npm test
