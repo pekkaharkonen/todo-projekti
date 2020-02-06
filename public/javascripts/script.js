@@ -17,7 +17,7 @@ function postTask(e) {
     alert("Please add a task");
     return;
   }
-  if (taskData.length>45){
+  if (taskData.value.length>45){
     alert("Max length for task is 45 characters. Please readjust your task description.")
     return;
   }
