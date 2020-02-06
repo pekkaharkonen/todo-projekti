@@ -193,7 +193,7 @@ h2 {
 
 @media screen and (max-width: 399px) {
   #add-task,
-  #edit-tasks,
+  #edit-task,
   #tasks {
     max-width: 300px;
   }
