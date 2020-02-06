@@ -10,15 +10,17 @@ let currentTasks = [];
 button.addEventListener("click", postTask);
 window.addEventListener("DOMContentLoaded", getTasks);
 taskList.addEventListener("click", updateOrDeleteTask);
-filter.addEventListener("keyup", filterTasks)
+filter.addEventListener("keyup", filterTasks);
+
 
 function postTask(e) {
+  //Tarkistetaan inputin pituus
   if (taskData.value === "") {
-    alert("Please add a task");
+    validateInput("empty")
     return;
   }
-  if (taskData.value.length>45){
-    alert("Max length for task is 45 characters. Please readjust your task description.")
+  if (taskData.value.length>40){
+    validateInput("long")
     return;
   }
   //Lähetetään form data Fetch POSTilla:
@@ -160,5 +162,25 @@ async function filterTasks(e) {
     } else {
       document.getElementById(t.id).parentElement.style.display = "none";
     }
+  }
+}
+
+function validateInput(param){
+  if (param === "empty"){
+    let errorMessage = "Task cannot be empty!"
+    let taskInput = document.querySelector(".task-input")
+    document.querySelector('small').innerText = errorMessage;
+    taskInput.classList.toggle("error")
+    setTimeout(()=>{
+      taskInput.classList.toggle("error")
+    },3000)
+  } else if (param === "long") {
+    let errorMessage = "Task cannot be longer than 40 characters!"
+    let taskInput = document.querySelector(".task-input")
+    document.querySelector('small').innerText = errorMessage;
+    taskInput.classList.toggle("error")
+    setTimeout(()=>{
+      taskInput.classList.toggle("error")
+    },3000)
   }
 }
