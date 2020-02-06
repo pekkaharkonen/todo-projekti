@@ -33,7 +33,7 @@ h2 {
   margin-bottom: 2rem;
 }
 
-#add-task input {
+.task-input input {
   width: 100%;
   padding: 0.3rem;
   border: none;
@@ -48,6 +48,20 @@ h2 {
 
 #add-task input:focus {
   outline: none;
+}
+
+.task-input small {
+  padding: 0.2rem;
+  display: none;
+}
+
+.task-input.error small {
+  color: red;
+  display: block;
+}
+
+.task-input.error input {
+  border-bottom: 1px solid red;
 }
 
 /* Edit-task box styling */
