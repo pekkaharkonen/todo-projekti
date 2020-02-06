@@ -15,7 +15,6 @@ describe("REST API GET tests", () => {
       .get("/api/tasks/45")
       .then(res => {
         expect(res.statusCode).toBe(404);
-        console.log(res.body);
         expect(res.body.Viesti).toBe("Taskia ei löydy!");
       });
   });
@@ -30,7 +29,7 @@ describe("PUT tests", () => {
         task: undefined
       })
       .then(res => {
-        expect(res.statusCode).not.toBe(400)
+        expect(res.statusCode).toBe(400)
       })
   })
   test("PUT with correct values should return correct status and message", () => {
@@ -125,4 +124,3 @@ describe("GET, PUT, POST and DELETE work together", () => {
       });
   });
 });
-
