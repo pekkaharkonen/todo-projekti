@@ -69,7 +69,7 @@ router.route('/:id')
       if (t.id === req.params.id) {
         const change = req.body;
         if (change.task != '' && change.task != null) {
-          t.task = change.t;
+          t.task = change.task;
           write();
           res.json({ Viesti: 'Muutettu' });
           return

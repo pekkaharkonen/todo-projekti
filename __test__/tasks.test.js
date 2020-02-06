@@ -22,18 +22,18 @@ describe("REST API GET tests", () => {
 
 describe("PUT tests", () => {
   test("PUT with invalid values should not be OK", () => {
-    let ID = "898d31df-69da-4cf3-be22-09c69f5e6800"
+    let ID = "6f313b62-d038-4bd6-a840-3a03f849912b"
     return request(app)
       .put(`/api/tasks/${ID}`)
       .send({
-        task: undefined
+        task: ""
       })
       .then(res => {
         expect(res.statusCode).toBe(400)
       })
   })
   test("PUT with correct values should return correct status and message", () => {
-    let ID = "898d31df-69da-4cf3-be22-09c69f5e6800"
+    let ID = "6f313b62-d038-4bd6-a840-3a03f849912b"
     return request(app)
       .put(`/api/tasks/${ID}`)
       .send({
@@ -51,7 +51,7 @@ describe("REST API POST tests", () => {
       .post("/api/tasks")
       .send({message: "Kukkuu"})
       .then(res => {
-        expect(res.statusCode).toBe(400);
+        expect(res.statusCode).toBe(500);
       });
   });
 });
