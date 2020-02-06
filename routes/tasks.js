@@ -2,14 +2,13 @@
 
 var express = require('express');
 var router = express.Router();
-var fs = require('fs');//
-var uuid = require('uuid/v4'); //
-tasks = [];
-const cors = require ('cors');
+var fs = require('fs'); //voidaan kirjoittaa tiedostoon, tasks.json
+var uuid = require('uuid/v4'); // automaattinen id:n luonti
+const cors = require ('cors'); // voidaan hakea tietoa ulkoisista apeista
+tasks = []; //Olemassa olevan tiedon lukeminen arrayhin tasks.json-tiedostosta tapahtuu app.js:stä
 
-// const tasksJSON = require('../tasks.json')
-// tasks = tasksJSON
-
+//kirjoittaa tasks-arrayn sisällön tasks.json-tiedostoon.
+//Funktio kutsutaan, kun tietoa lisätään, poistetaan tai muokataan
 function write() {
   fs.writeFile("tasks.json", JSON.stringify(tasks, null, 1),
   function (err) {
@@ -17,11 +16,7 @@ function write() {
     });
   }
 
-/* GET users listing. 
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-}); */
-
+//tiedon hakeminen ja lisääminen, ei id-kohtaista tietoa
 router.route('/')
   .get(function (req, res, next) {
     res.json(tasks);
@@ -37,6 +32,7 @@ router.route('/')
     res.json(task);
   });
 
+  //tiedon hakeminen, muokkaaminen ja poistaminen id:n perusteella
 router.route('/:id')
   .get(function (req, res) {
     for (let task of tasks) {
@@ -68,8 +64,7 @@ router.route('/:id')
       if (t.id === req.params.id) {
         const change = req.body;
         if (change.task) {
-          t.task = change.task
-          console.log(t.task);
+          t.task = change.task;
           write();
         }
         res.json({ Viesti: 'Muutettu' });
