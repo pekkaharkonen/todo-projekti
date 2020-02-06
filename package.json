@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "SET DEBUG=todo-projekti:* & nodemon ./bin/www"
+    "start": "SET DEBUG=todo-projekti:* & nodemon ./bin/www",
+    "test": "jest"
   },
   "nodemonConfig": {
     "ignore": [
@@ -22,5 +23,9 @@
     "node-fetch": "^2.6.0",
     "pug": "2.0.0-beta11",
     "uuid": "^3.4.0"
+  },
+  "devDependencies": {
+    "jest": "^25.1.0",
+    "supertest": "^4.0.2"
   }
 }
