@@ -24,12 +24,17 @@ router.route('/')
 
   .post(function (req, res, next) {
     if (!req.body) throw new Error("Tyhjä syöte");
-    const task = req.body;
-    console.dir(req.body);
-    task.id = uuid();
-    tasks.push(task);
-    write();
-    res.json(task);
+    const t = req.body;
+    if (t.task) {
+      t.id = uuid();
+      let add = {id: t.id, task: t.task};
+      tasks.push(add);
+      write();
+      res.json(add);
+    } else {
+      throw new Error("Virheellinen syöte");
+    }
+
   });
 
   //tiedon hakeminen, muokkaaminen ja poistaminen id:n perusteella
@@ -63,12 +68,14 @@ router.route('/:id')
     for (let t of tasks) {
       if (t.id === req.params.id) {
         const change = req.body;
-        if (change.task) {
-          t.task = change.task;
+        if (change.task != '' && change.task != null) {
+          t.task = change.t;
           write();
+          res.json({ Viesti: 'Muutettu' });
+          return
+        } else {
+          res.status(400).json( { Viesti: "Virhe! Task tyhjä" })
         }
-        res.json({ Viesti: 'Muutettu' });
-        return
       }
     }
     res.status(404)
